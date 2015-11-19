@@ -1,2 +1,0 @@
-serviceClass: com.gwtbook.module.basic.client.BasicService
-path: A6B78ADAEC6FBB8ADD51F32178997F8D.gwt.rpc
