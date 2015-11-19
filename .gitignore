@@ -1,6 +1,8 @@
 /.gradle
 /.idea
 /BasicModule/build
+/BasicModule/war/WEB-INF/deploy
+/BasicModule/gwt-unitCache
 /out
 *.iml
 *.ipr

@@ -1,0 +1,52 @@
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+project.webAppDirName = 'war'
+
+dependencies {
+    compile name:'gwt-user'
+    runtime name:'gwt-servlet'
+    compile name:'gwt-dev'
+}
+
+sourceSets {
+    main {
+        output.resourcesDir = "$buildDir/classes"
+        output.classesDir   = "$buildDir/classes"
+    }
+}
+
+task compileGwt (dependsOn: classes, type: JavaExec) {
+    main = 'com.google.gwt.dev.Compiler'
+    maxHeapSize = '256M'
+
+    inputs.source sourceSets.main.java.srcDirs
+    inputs.dir sourceSets.main.resources.srcDirs
+    inputs.dir sourceSets.main.output.classesDir
+    outputs.dir webAppDir
+
+    classpath {[
+        sourceSets.main.java.srcDirs,
+        sourceSets.main.resources.srcDirs,
+        sourceSets.main.output.classesDir,
+        sourceSets.main.compileClasspath, // The classpath used to compile this source
+    ]}
+
+    args = [
+        'com.gwtbook.module.basic.Basic',
+        '-localWorkers', '2',
+        '-compileReport',
+        '-extra', "$buildDir/extra",
+        '-draftCompile' // Speeds up compile with 25%
+    ]
+}
+
+war {
+    dependsOn compileGwt
+    destinationDir file("$buildDir/dist")
+    manifest {
+        attributes('Version': rootProject.version)
+    }
+}

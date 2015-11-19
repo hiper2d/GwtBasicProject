@@ -1,0 +1,3 @@
+# Module Basic
+# RPC service class, partial path of RPC policy file
+com.gwtbook.module.basic.client.BasicService, A6B78ADAEC6FBB8ADD51F32178997F8D.gwt.rpc

@@ -1,0 +1,4 @@
+include 'BasicModule'
+
+rootProject.name = 'GwtBasicProject'
+

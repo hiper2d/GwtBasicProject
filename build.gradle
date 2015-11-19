@@ -1,0 +1,13 @@
+group 'com.gwtbook'
+version '1.0-SNAPSHOT'
+
+allprojects {
+    apply plugin: 'idea'
+
+    repositories {
+        jcenter()
+        flatDir {
+            dirs "${System.env.GWT_HOME}/share"
+        }
+    }
+}
