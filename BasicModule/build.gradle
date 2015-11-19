@@ -7,8 +7,8 @@ project.webAppDirName = 'war'
 
 dependencies {
     compile name:'gwt-user'
-    runtime name:'gwt-servlet'
     compile name:'gwt-dev'
+    runtime name:'gwt-servlet'
 }
 
 sourceSets {
