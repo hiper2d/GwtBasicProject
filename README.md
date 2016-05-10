@@ -1,2 +1,2 @@
-# GWT, RPC, Gradle simple example
-Simple project stub with GWT and Gradle. Contains GWT RPC servlet.
+# Example of GWT, RPC, Gradle usage
+A very simple project with GWT and Gradle. Contains GWT RPC servlet.
